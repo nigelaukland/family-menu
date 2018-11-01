@@ -1,0 +1,28 @@
+<div class="ui container">
+  <div class="ui cards">
+    
+    <!-- Repeat for every recipe -->
+
+    <div 
+      *ngFor="let recipe of recipes"
+      class="card">
+      <div class="ui medium image">
+        <img src={{recipe.imagePath}}>
+      </div>
+      <div class="content">
+        <div class="header">
+          {{recipe.name}}
+        </div>
+        <div class="meta">
+          {{recipe.description}}
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+          <div class="ui teal button">View</div>
+          <div class="ui teal basic button">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

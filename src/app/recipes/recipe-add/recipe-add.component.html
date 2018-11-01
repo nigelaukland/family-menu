@@ -1,0 +1,33 @@
+<div class="ui container">
+  <div class="ui raised segment">
+  <form class="ui form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="field">
+      <label>Name of recipe</label>
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="E.g. Tandoori tilapia"
+        ngModel>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <input 
+        type="text" 
+        name="description" 
+        placeholder="E.g. A take on James Martin's Tandoori Cod"
+        ngModel>
+    </div>
+    <div class="field">
+      <label>Image Path</label>
+      <input 
+        type="text" 
+        name="imagePath" 
+        placeholder="E.g. /www.example.com/images/food.jpg"
+        ngModel>
+    </div>
+    <button class="ui teal button" type="submit">Add Recipe</button>
+    <button class="ui button" type="submit">Clear</button>
+
+  </form>
+  </div>
+</div>
