@@ -16,8 +16,12 @@ export class RecipeService {
     .map(
       (response: Response) => {
         const data = response.json();
-        return data;
-      }
+        var recipes = data.map(function(data) {
+          return {name: data.name, description: data.description, imagePath: data.imagePath};
+        })
+        return recipes;
+      },
+      (error) => console.log(error)
     );
   }
 

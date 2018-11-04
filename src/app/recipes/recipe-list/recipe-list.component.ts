@@ -10,7 +10,7 @@ import { RecipeService } from './../shared/recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes: any[]
+  recipes: any[] = [];
 
   constructor(private recipeService: RecipeService) { }
 
@@ -18,24 +18,8 @@ export class RecipeListComponent implements OnInit {
     this.recipeService.getRecipes()
     .subscribe(
       (response) => {
-        // const data = response.json();
         console.log(response);
-        // console.log(this.recipes);
-        // this.recipes[0] = {
-        //   name: "me",
-        //   description: "youtoo",
-        //   imagePath: "some url"
-        // };
-        // var i;
-        // for (i=0; i < data.length; i++) {
-        //   this.recipes.push(
-        //     {
-        //       name: data[i].name,
-        //       description: data[i].description,
-        //       imagePath: data[i].imagePath
-        //     }
-        //   ); 
-        // }
+        this.recipes = response;
       },
       (error) => console.log(error)
     );
