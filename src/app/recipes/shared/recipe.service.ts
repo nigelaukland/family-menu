@@ -7,6 +7,7 @@ import 'rxjs/Rx';
 export class RecipeService {
   constructor (private http: Http) {}
  
+  
    getRecipes() {
     return this.http.get('http://menu-api.nigelaukland.com/recipes')
     .map(
