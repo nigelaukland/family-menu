@@ -7,12 +7,8 @@ import 'rxjs/Rx';
 export class RecipeService {
   constructor (private http: Http) {}
  
-  // private recipes: Recipe[] = [
-  //   new Recipe('Tandoori Tilapia', 'The recipe from James Martin', 'https://i.dailymail.co.uk/i/pix/2011/03/11/article-0-0D30A321000005DC-986_468x419.jpg')
-  // ];
-
-  getRecipes() {
-    return this.http.get('http://192.168.0.30:50001/recipes')
+   getRecipes() {
+    return this.http.get('http://menu-api.nigelaukland.com/recipes')
     .map(
       (response: Response) => {
         const data = response.json();
@@ -27,7 +23,7 @@ export class RecipeService {
 
   storeRecipe(recipe: Recipe) {
     // default Content-Type is application/json
-    return this.http.post('http://192.168.0.30:50001/recipes', recipe);
+    return this.http.post('http://menu-api.nigelaukland.com/recipes', recipe);
     // can add a {headers} object as a parameter to the http method
    }
 
